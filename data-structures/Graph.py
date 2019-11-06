@@ -1,6 +1,6 @@
 
-from Stack import *
-
+from Stack import Stack
+from Queue import Queue
 class Graph:
     def __init__(self):
         self.graph = {}
@@ -35,4 +35,18 @@ class Graph:
         return False
 
     def hasPathQueue(self, nodeA, nodeB):
+        assert nodeA in self.graph, "nodeA is not in the graph "
+        assert nodeB in self.graph, "nodeB is not in the graph "  
+
+        queue = Queue()
+        queue.push(nodeA)
+
+        while not queue.is_empty():
+            elem = queue.pop()
+            neighbors = self.graph[elem]
+
+            if elem == nodeB:
+                return True
+            queue.queue += neighbors.keys()
         return False
+

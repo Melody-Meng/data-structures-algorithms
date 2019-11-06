@@ -21,5 +21,11 @@ class TestGraph(unittest.TestCase):
     def test_has_path_false(self):
         self.assertFalse(self.graph.hasPath('D', 'C'))
 
+    def test_has_path_queue_true(self):
+        self.assertTrue(self.graph.hasPathQueue('A', 'E'))
+
+    def test_has_path_queue_false(self):
+        self.assertFalse(self.graph.hasPathQueue('D', 'C'))
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,8 +1,6 @@
 import unittest
 from Stack import Stack
 
-
-
 class TestGraph(unittest.TestCase):
     def setUp(self):
         self.stack = Stack()
